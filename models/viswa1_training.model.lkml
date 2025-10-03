@@ -8,7 +8,20 @@ datagroup: viswa1_training_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+datagroup: users_datagroup {
+  sql_trigger: SELECT count(id) FROM users;;
+  max_cache_age: "30 minutes"
+}
+
+datagroup: orders_datagroup {
+  sql_trigger: SELECT count(id) FROM orders;;
+  max_cache_age: "15 hour"
+}
+
+
 persist_with: viswa1_training_default_datagroup
+persist_with: orders_datagroup
+
 
 explore: billion_orders {
   join: orders {
@@ -39,6 +52,7 @@ explore: countries {}
 explore: customer {}
 
 explore: day_of_week {}
+
 
 explore: demo_visits_data {
   join: users {
@@ -139,6 +153,7 @@ explore: lrjp14_e1757972862083_testincrementalpdt {}
 explore: map_layer {}
 
 explore: orders {
+  persist_with: users_datagroup
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
