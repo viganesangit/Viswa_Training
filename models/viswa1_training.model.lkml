@@ -55,6 +55,8 @@ explore: day_of_week {}
 
 explore: total_orders {}
 
+explore: total_revenue {}
+
 
 explore: demo_visits_data {
   join: users {
