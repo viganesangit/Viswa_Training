@@ -57,6 +57,8 @@ explore: total_orders {}
 
 explore: total_revenue {}
 
+explore:  liquid {}
+
 
 explore: demo_visits_data {
   join: users {
