@@ -7,6 +7,22 @@ view: users {
     type: number
     sql: ${TABLE}.id ;;
   }
+
+  filter: state_select {
+    type: string
+    suggest_dimension: state
+  }
+
+  dimension: dynamic_custom_state_grouping {
+    type: string
+    sql:
+     CASE
+     WHEN {% condition state_select %} ${state} {% endcondition %}
+     THEN ${state}
+     ELSE "All Other States"
+     END ;;
+  }
+
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
