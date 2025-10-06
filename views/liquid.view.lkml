@@ -1,7 +1,7 @@
 view: liquid {
   dimension: liquid_variable_example {
-    type: number
-    html: {% assign TRAINING = 8 %}
+    type: string
+    sql: {% assign TRAINING = 8 %}
 {{ TRAINING | minus: 4 }} ;;
   }
   }
