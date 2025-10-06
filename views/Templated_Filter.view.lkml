@@ -12,5 +12,3 @@ view: templated_filter {
       type: string
     }
   }
-
-# }
