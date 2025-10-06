@@ -59,6 +59,8 @@ explore: total_revenue {}
 
 explore:  liquid {}
 
+explore: templated_filter {}
+
 
 explore: demo_visits_data {
   join: users {
