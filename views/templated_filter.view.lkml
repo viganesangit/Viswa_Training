@@ -8,7 +8,6 @@ view: templated_filter {
 
   filter: users_location {
     type: string
-    sql: ${TABLE}.state ;;
   }
 
   parameter: users_parameter {
