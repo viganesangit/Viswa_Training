@@ -1,5 +1,13 @@
-
 view: liquid {
+
+  sql_table_name: demo_db.users ;;
+  drill_fields: [id]
+
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
 
   dimension: liquid_variable_example {
     type: string
@@ -64,6 +72,41 @@ view: liquid {
             <li>'{ { my_variable | date: "%T" } }' --> {{ my_variable | date: "%T" }}</li>
             <li>'{ { my_variable | date: "%r" } }' --> {{ my_variable | date: "%r" }}</li>
           </ul>   ;;
+  }
+
+  dimension: liquid_value_example {
+    type: number
+    sql: 10 ;;
+    value_format_name: usd
+    html: {{ value }} - {{ rendered_value }} ;;
+  }
+  dimension: liquid_filterable_value_example {
+    type: string
+    sql: "Mexico City, Mexico" ;;
+    html: {{ value }} - {{ filterable_value }} ;;
+  }
+
+  filter: new_filter_test{
+    type: date_time
+  }
+
+  dimension: filter_start{
+    type: date_time
+    sql: {% date_start new_filter_test %} ;;
+  }
+
+  dimension: filter_end{
+    type: date_time
+    sql: {% date_end new_filter_test %} ;;
+  }
+
+  parameter: numeric_parameter {
+    type: number
+  }
+
+  dimension: dynamic_numeric_value{
+    type: number
+    sql: {% parameter numeric_parameter %} * 10;;
   }
 
 }
