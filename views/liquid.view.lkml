@@ -1,11 +1,9 @@
-view: liquid {
-  dimension: liquid_variable_example {
-    type: string
-    sql: {% assign TRAINING = 8 %}
-{{ TRAINING | minus: 4 }} ;;
-  }
 
-  dimension: liquid_variable_example1 {
+view: liquid {
+
+
+
+  dimension: liquid_variable_example {
     type: string
     sql: "Example" ;;
     html: {% assign my_variable = "This is a variable" %}
