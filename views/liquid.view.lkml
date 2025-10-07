@@ -1,8 +1,6 @@
 
 view: liquid {
 
-
-
   dimension: liquid_variable_example {
     type: string
     sql: "Example" ;;
