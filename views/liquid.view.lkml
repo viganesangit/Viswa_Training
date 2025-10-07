@@ -4,21 +4,8 @@ view: liquid {
     sql: {% assign TRAINING = 8 %}
 {{ TRAINING | minus: 4 }} ;;
   }
-  }
 
-explore: liquid_usage {}
-view: liquid_usage {
-
-  sql_table_name: demo_db.users ;;
-  drill_fields: [id]
-
-  dimension: id {
-    primary_key: yes
-    type: number
-    sql: ${TABLE}.id ;;
-  }
-
-  dimension: liquid_variable_example {
+  dimension: liquid_variable_example1 {
     type: string
     sql: "Example" ;;
     html: {% assign my_variable = "This is a variable" %}
