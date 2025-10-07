@@ -3,7 +3,7 @@ view: templated_filter {
   derived_table: {
     sql: Select
       id, first_name, last_name, age, created_at, state from users
-      --WHERE {% condition users_location %} users.state {% endcondition %} -- Templated Filters
+      -- WHERE {% condition users_location %} users.state {% endcondition %} -- TEMPLATED FILTER
       WHERE users.state = {% parameter users_parameter %} ;;
   }
 
