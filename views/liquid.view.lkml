@@ -109,4 +109,10 @@ view: liquid {
     sql: {% parameter numeric_parameter %} * 10;;
   }
 
+  dimension: brand_linked {
+    type: string
+    sql: ${TABLE}.brand ;;
+    html: <a href="https://www.google.com/search?q={{value}}">{{value}}</a> ;;
+  }
+
 }
