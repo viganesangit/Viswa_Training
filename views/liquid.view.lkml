@@ -1,13 +1,13 @@
 view: liquid {
 
-  # sql_table_name: demo_db.users ;;
-  # drill_fields: [id]
+  sql_table_name: demo_db.users ;;
+  drill_fields: [id]
 
-  # dimension: id {
-  #   primary_key: yes
-  #   type: number
-  #   sql: ${TABLE}.id ;;
-  # }
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
 
   dimension: liquid_variable_example {
     type: string
