@@ -18,6 +18,11 @@ datagroup: orders_datagroup {
   max_cache_age: "15 hour"
 }
 
+datagroup: orders_pdt_24_hours {
+  max_cache_age: "25 hours"
+  interval_trigger: "24 hours"
+  description: "Trigger every 24 hours to persist data"
+}
 
 persist_with: viswa1_training_default_datagroup
 persist_with: orders_datagroup
