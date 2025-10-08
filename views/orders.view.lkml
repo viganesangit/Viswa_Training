@@ -1,18 +1,6 @@
 # If necessary, uncomment the line below to include explore_source.
 # include: "viswa1_training.model.lkml"
 
-view: order_count {
-  derived_table: {
-    explore_source: orders {
-      column: count {}
-    }
-  }
-
-  dimension: count {
-    description: ""
-    type: number
-  }
-}
 
 
 view: orders {
